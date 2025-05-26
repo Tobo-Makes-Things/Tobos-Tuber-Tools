@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx4ac1wrruwbx"]
+
+[ext_resource type="PackedScene" uid="uid://daggkfridiwgm" path="res://Scenes/Scene.tscn" id="1_a7kdy"]
+[ext_resource type="Script" uid="uid://ddc34od0v6yi5" path="res://Scenes/Presenter/Presenter.gd" id="2_60y6v"]
+
+[node name="nde2_Presenter" instance=ExtResource("1_a7kdy")]
+script = ExtResource("2_60y6v")
