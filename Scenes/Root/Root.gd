@@ -15,15 +15,19 @@ var activeScene:Scene
 var activeAvatar:Avatar
 var activeSubwindow:SceneWindow
 
+var _handled_input:bool = false
+
 func _init() -> void:
 	instance = self
 
 func _ready() -> void:
-	activePreference = Preference.load_default(true)
+	activePreference = Preference.load_default(false)
 	with_scene(Profile.create())
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	_handled_input = false
 	if Input.is_action_just_pressed("ui_cancel"):
+		_handled_input = true
 		if activeSubwindow != null:
 			if activeSubwindow.is_inside_tree():
 				activeSubwindow.visible = true
@@ -31,7 +35,15 @@ func _input(_event: InputEvent) -> void:
 				add_child(activeSubwindow)
 		else:
 			with_second_window_scene(Menu.create())\
-				.activeSubwindow.with_name("Menu")
+				.activeSubwindow\
+					.with_name("Menu")\
+					.with_minimum_size(Vector2i(640, 360))
+	
+	if !_handled_input && event is InputEventKey:
+		if activeScene is Profile:
+			activeScene.should_show_help = true
+			await get_tree().create_timer(4.0).timeout
+			activeScene.should_show_help = false
 
 func with_scene(newscene:Scene) -> Root:
 	if activeScene != null:

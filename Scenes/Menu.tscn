@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhmfdsr5x54qh"]
+[gd_scene load_steps=5 format=3 uid="uid://bhmfdsr5x54qh"]
 
 [ext_resource type="Script" uid="uid://c778kounrsjul" path="res://Scenes/Menu/Menu.gd" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://c7ese78gfmjyf" path="res://Scenes/Menu/Pieces/VersionLabel.gd" id="2_6pedr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kf3n"]
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_6pedr"]
+font_size = 12
+font_color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="ctr2_Menu" type="Control"]
 layout_mode = 3
@@ -19,3 +27,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="vbc2_Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hbc2_Title_Bar" type="HBoxContainer" parent="vbc2_Menu"]
+layout_mode = 2
+
+[node name="lbl2_Title" type="Label" parent="vbc2_Menu/hbc2_Title_Bar"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Tobos Tuber Tools"
+label_settings = SubResource("LabelSettings_3kf3n")
+vertical_alignment = 2
+
+[node name="ctr2_Spacer" type="Control" parent="vbc2_Menu/hbc2_Title_Bar"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="lbl2_Version" type="Label" parent="vbc2_Menu/hbc2_Title_Bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "v0.0.0-NULL"
+label_settings = SubResource("LabelSettings_6pedr")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("2_6pedr")
+metadata/_custom_type_script = "uid://c7ese78gfmjyf"
+
+[node name="hsc2_Settings" type="HSplitContainer" parent="vbc2_Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 180
+
+[node name="tre2_Settings_List" type="Tree" parent="vbc2_Menu/hsc2_Settings"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+
+[node name="vbc2_Settings" type="VBoxContainer" parent="vbc2_Menu/hsc2_Settings"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2

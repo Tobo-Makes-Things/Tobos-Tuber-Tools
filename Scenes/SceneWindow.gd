@@ -5,6 +5,7 @@ var activeScene:CanvasItem
 
 func _init() -> void:
 	transparent = false
+	initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS
 
 func _ready() -> void:
 	close_requested.connect(_close)
