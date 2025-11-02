@@ -49,10 +49,19 @@ vertical_alignment = 2
 [node name="ctr2_Spacer" type="Control" parent="vbc2_Menu/hbc2_Title_Bar"]
 custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn2_View_Webcam" type="Button" parent="vbc2_Menu/hbc2_Title_Bar"]
+layout_mode = 2
+text = "View Webcam"
+
+[node name="ctr2_Spacer2" type="Control" parent="vbc2_Menu/hbc2_Title_Bar"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="lbl2_Version" type="Label" parent="vbc2_Menu/hbc2_Title_Bar"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "v0.0.0-NULL"
 label_settings = SubResource("LabelSettings_6pedr")

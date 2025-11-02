@@ -19,6 +19,7 @@ var _handled_input:bool = false
 
 func _init() -> void:
 	instance = self
+	WebcamHandler.print_feeds()
 
 func _ready() -> void:
 	# activePreference = Preferences.load_default(false)
@@ -54,6 +55,9 @@ func _input(event: InputEvent) -> void:
 			activeScene.should_show_help = true
 			await get_tree().create_timer(4.0).timeout
 			activeScene.should_show_help = false
+
+func _physics_process(_delta: float) -> void:
+	print(1)
 
 func with_scene(newscene:Scene) -> Root:
 	if activeScene != null:
