@@ -27,6 +27,7 @@ func _ready() -> void:
 		activePreference.load_values()
 	
 	if FileHandler.file_exists("preferences.tttpref") && FileHandler.file_get_last_error() == 0:
+		with_scene(Profile.create())
 		return
 
 	activePreference = Preferences.load_default()
