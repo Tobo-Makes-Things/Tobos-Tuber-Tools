@@ -9,7 +9,7 @@ static var instance:Root
 @onready var viewport:Viewport = instance.get_viewport()
 @onready var window:Window = instance.get_window()
 
-var activePreference:Preference
+var activePreference:Preferences
 
 var activeScene:Scene
 var activeAvatar:Avatar
@@ -21,7 +21,16 @@ func _init() -> void:
 	instance = self
 
 func _ready() -> void:
-	activePreference = Preference.load_default(false)
+	# activePreference = Preferences.load_default(false)
+	if FileHandler.file_exists("preferences.tttpref"):
+		activePreference = FileHandler.load_file("user://preferences.tttpref")
+		activePreference.load_values()
+	
+	if FileHandler.file_exists("preferences.tttpref") && FileHandler.file_get_last_error() == 0:
+		return
+
+	activePreference = Preferences.load_default()
+	activePreference.save()
 	with_scene(Profile.create())
 
 func _input(event: InputEvent) -> void:
