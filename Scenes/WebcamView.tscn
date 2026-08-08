@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cir38flwi6nx0"]
+[gd_scene format=3 uid="uid://cir38flwi6nx0"]
 
 [ext_resource type="PackedScene" uid="uid://daggkfridiwgm" path="res://Scenes/Scene.tscn" id="1_fkk38"]
 [ext_resource type="Script" uid="uid://bdrdg3e5p4bms" path="res://Scenes/WebcamView/WebcamView.gd" id="2_uoxjq"]
 
 [sub_resource type="CameraTexture" id="CameraTexture_uoxjq"]
 
-[node name="nde2_Webcam_View" instance=ExtResource("1_fkk38")]
+[node name="nde2_Webcam_View" unique_id=1423030513 instance=ExtResource("1_fkk38")]
 script = ExtResource("2_uoxjq")
 
-[node name="cvl2_UI" type="CanvasLayer" parent="." index="0"]
+[node name="cvl2_UI" type="CanvasLayer" parent="." index="0" unique_id=545184568]
 
-[node name="clr2_BG" type="ColorRect" parent="cvl2_UI" index="0"]
+[node name="clr2_BG" type="ColorRect" parent="cvl2_UI" index="0" unique_id=881481338]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
 
-[node name="txr2_Camera" type="TextureRect" parent="cvl2_UI" index="1"]
+[node name="txr2_Camera" type="TextureRect" parent="cvl2_UI" index="1" unique_id=1555794394]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
